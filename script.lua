@@ -49,9 +49,12 @@ Event:FireServer(A_1, A_2)
 return ExtremeMode
 	end
 end
+--Notify
+Rayfield:Notify("Пошёл нахуй со своими автосохранением настроек","Пошёл нахуй",10010348543)
 --Tabs
 local Main = Window:CreateTab("Main")
 local Modes = Window:CreateTab("Modes")
+local Tools = Window:CreateTab("Others Tools")
 --Toggles
 local Toggle = Main:CreateToggle({
 	Name = "Auto Farm",

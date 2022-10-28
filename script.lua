@@ -1,5 +1,19 @@
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
-local Window = Rayfield:CreateWindow({
+local Window = Rayfield:CreateWindow({Name = "Chelovek Hub",
+LoadingTitle = "Chelovek Interface Loaded!",
+LoadingSubtitle = "by chelovek#2374",
+ConfigurationSaving = {
+	Enabled = true,
+	FileName = "Big Hub",
+},
+KeySystem = true, 
+KeySettings = {
+	Title = "Chelovek Hub",
+	Subtitle = "Key System",
+	Note = "Join the discord (https://discord.gg/EmMFaTKnXs)",
+	Key = "L5?{bQ2@TW8J0xS4.tlvHm:rqNX9P#"
+}
+})
 --Values
 _G.autofarm = true
 _G.AutoExtremeMode = true
@@ -28,28 +42,13 @@ end
 
 function AutoExtremeMode()
 	while _G.AutoExtremeMode == true do
-		local ExtremeMode = local A_1 = "VoteGameMode"
+local A_1 = "VoteGameMode"
 local A_2 = "Extreme"
 local Event = game:GetService("ReplicatedStorage").Remotes.Input
 Event:FireServer(A_1, A_2)
 return ExtremeMode
 	end
 end
-Name = "Chelovek Hub",
-LoadingTitle = "Chelovek Interface Loaded!",
-LoadingSubtitle = "by chelovek#2374",
-ConfigurationSaving = {
-	Enabled = true,
-	FileName = "Big Hub",
-},
-KeySystem = true, 
-KeySettings = {
-	Title = "Chelovek Hub",
-	Subtitle = "Key System",
-	Note = "Join the discord (https://discord.gg/EmMFaTKnXs)",
-	Key = "L5?{bQ2@TW8J0xS4.tlvHm:rqNX9P#"
-}
-})
 --Tabs
 local Main = Window:CreateTab("Main")
 local Mode = Window:CreateTab("Modes")
@@ -68,7 +67,7 @@ local Toggle = Modes:CreateToggle({
 	CurrentValue = false,
 	Flag = "Toggle1", 
 	Callback = function(Value)
-		_G.autofarm = Value
-		autofarm()
+		_G.AutoExtremeMode = Value
+		AutoExtremeMode()
 	end,
 })

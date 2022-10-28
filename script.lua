@@ -4,7 +4,7 @@ LoadingTitle = "Chelovek Interface Loaded!",
 LoadingSubtitle = "by chelovek#2374",
 ConfigurationSaving = {
 	Enabled = true,
-	FileName = "Big Hub",
+	FileName = "Chelovek Hub",
 },
 KeySystem = true, 
 KeySettings = {
@@ -46,11 +46,11 @@ local A_1 = "VoteGameMode"
 local A_2 = "Extreme"
 local Event = game:GetService("ReplicatedStorage").Remotes.Input
 Event:FireServer(A_1, A_2)
-return ExtremeMode
+return AutoExtremeMode()
 	end
 end
 --Notify
-Rayfield:Notify("Пошёл нахуй со своими автосохранением настроек","Пошёл нахуй",10010348543)
+
 --Tabs
 local Main = Window:CreateTab("Main")
 local Modes = Window:CreateTab("Modes")
@@ -66,7 +66,7 @@ local Toggle = Main:CreateToggle({
 	end,
 })
 local Toggle = Modes:CreateToggle({
-	Name = "Auto extreme mode",
+	Name = "Auto extreme mode (PATCHED)",
 	CurrentValue = false,
 	Flag = "Toggle1", 
 	Callback = function(Value)
@@ -74,3 +74,18 @@ local Toggle = Modes:CreateToggle({
 		AutoExtremeMode()
 	end,
 })
+--Buttons
+local Button = Tools:CreateButton({
+	Name = "Yield",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	end,
+})
+local Button = Tools:CreateButton({
+	Name = "Chelovek AutoClicker",
+	Callback = function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/jMcVd5cv"))()
+	end,
+})
+--Paragraphs
+local Paragraph = Tools:CreateParagraph({Title = "Как использовать автокликер от человека", Content = "Чтобы включить автокликер нажмите на F5 чтобы выключить на F6"})

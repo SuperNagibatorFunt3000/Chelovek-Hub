@@ -50,11 +50,16 @@ return AutoExtremeMode()
 	end
 end
 --Notify
-
+local id = game:GetService("Players").LocalPlayer.UserId
+print('user id is -',id)
+local jid = game.JobId
+print('JobId -',jid)
+Rayfield:Notify("Вы успешно зашли в наше GUI","") 
 --Tabs
 local Main = Window:CreateTab("Main")
 local Modes = Window:CreateTab("Modes")
 local Tools = Window:CreateTab("Others Tools")
+local Settings = Window:CreateTab("Settings")
 --Toggles
 local Toggle = Main:CreateToggle({
 	Name = "Auto Farm",
@@ -85,6 +90,12 @@ local Button = Tools:CreateButton({
 	Name = "Chelovek AutoClicker",
 	Callback = function()
 		loadstring(game:HttpGet("https://pastebin.com/raw/jMcVd5cv"))()
+	end,
+})
+local Button = Settings:CreateButton({
+	Name = "Destroy GUI",
+	Callback = function()
+		Rayfield:Destroy()
 	end,
 })
 --Paragraphs

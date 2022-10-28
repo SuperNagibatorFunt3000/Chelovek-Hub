@@ -51,7 +51,7 @@ return ExtremeMode
 end
 --Tabs
 local Main = Window:CreateTab("Main")
-local Mode = Window:CreateTab("Modes")
+local Modes = Window:CreateTab("Modes")
 --Toggles
 local Toggle = Main:CreateToggle({
 	Name = "Auto Farm",
